@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Водостоки";
+$arDirProperties = Array(
+
+);
+?>

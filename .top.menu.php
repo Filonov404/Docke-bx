@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Сайдинг", 
+		"/sayding/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фасадные панели", 
+		"/fasadnye-paneli/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Кровля", 
+		"/krovlya/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Водостоки", 
+		"/vodostoki/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
