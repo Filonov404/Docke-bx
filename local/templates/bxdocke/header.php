@@ -7,9 +7,7 @@ $CurUri = $APPLICATION->GetCurUri();
 <html lang="en">
 <head>
     <?
-
     use Bitrix\Main\Page\Asset;
-
     // подключение JS
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.6.0.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/loopcounter.js');
@@ -34,9 +32,9 @@ $APPLICATION->ShowPanel();
 <header class="header">
     <div class="container">
         <div class="header-wrapper">
-            <div class="logo">
+            <a href="/" class="logo">
                 <img src="<?= SITE_TEMPLATE_PATH ?>/images/icons/logo.webp" alt="logo" class="logo-img">
-            </div>
+            </a>
             <div class="header-oficial-text">
                 <p class="oficial-text">
                     Официальный дилер
@@ -61,29 +59,57 @@ $APPLICATION->ShowPanel();
     <div class="header-bottom-wrapper">
         <div class="container">
             <div class="header-bottom-inner">
-                <? $APPLICATION->IncludeComponent(
+                <?$APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "templates",
-                    array(
+                    Array(
                         "ALLOW_MULTI_SELECT" => "N",
                         "CHILD_MENU_TYPE" => "left",
                         "DELAY" => "N",
                         "MAX_LEVEL" => "1",
-                        "MENU_CACHE_GET_VARS" => array(),
+                        "MENU_CACHE_GET_VARS" => array(""),
                         "MENU_CACHE_TIME" => "3600",
-                        "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "N",
                         "ROOT_MENU_TYPE" => "top",
-                        "USE_EXT" => "N",
-                        "COMPONENT_TEMPLATE" => "templates"
-                    ),
-                    false
-                ); ?>
-                <a href="/" class="back-benefits">На главную</a>
+                        "USE_EXT" => "N"
+                    )
+                );?>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:sale.basket.basket.line",
+                    "",
+                    Array(
+                        "HIDE_ON_BASKET_PAGES" => "Y",
+                        "PATH_TO_AUTHORIZE" => "",
+                        "PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+                        "PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
+                        "POSITION_FIXED" => "N",
+                        "SHOW_AUTHOR" => "N",
+                        "SHOW_EMPTY_VALUES" => "N",
+                        "SHOW_NUM_PRODUCTS" => "Y",
+                        "SHOW_PERSONAL_LINK" => "N",
+                        "SHOW_PRODUCTS" => "N",
+                        "SHOW_REGISTRATION" => "N",
+                        "SHOW_TOTAL_PRICE" => "Y"
+                    )
+                );?>
             </div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:breadcrumb",
+                "",
+                Array(
+                    "PATH" => "",
+                    "SITE_ID" => "s1",
+                    "START_FROM" => "1"
+                )
+            );?>
+
         </div>
-    </div>
+        </div>
+
+
 </header>
 
 </body>
 </html>
+

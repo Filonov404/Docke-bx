@@ -218,6 +218,35 @@ body {
     font-size: 0;
 }
 
+
+.pagination-inner {
+    display: flex;
+    padding: 18px 0 10px;
+}
+
+.pagination-link {
+    position: relative;
+    margin: 0 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #6b6b64;
+}
+
+.pagination-link::after {
+    position: absolute;
+    content: '';
+    width: 14px;
+    border-bottom: 1px solid #9d9d9d;
+    transform: rotate(250deg);
+    right: -14px;
+    bottom: 8px;
+}
+
+.pagination-link:hover {
+    color: #121212;
+}
+
+
 .phone-link:hover {
     color: #003049;
     text-decoration: underline;
@@ -249,6 +278,9 @@ body {
 }
 
 .header-bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #fff;
     padding: 12px 0 10px;
     border-bottom: 1px solid #e0e0e0;
