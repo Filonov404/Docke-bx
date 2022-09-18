@@ -124,12 +124,14 @@ $this->setFrameMode(true);
 	<!-- Описание -->
 	<?=$arResult["DETAIL_TEXT"]?>
 
-
+<span>
+	<?$arResult['DISPLAY_PROPERTY']['COLOR']?>
+</span>
 
 	<!-- Оценка -->
 	<? $APPLICATION->IncludeComponent("bitrix:iblock.vote", "starstemp", Array(
                     "IBLOCK_TYPE" => "catalog",    // Тип инфоблока
-                    "IBLOCK_ID" => "5",    // Инфоблок
+                    "IBLOCK_ID" => "4",    // Инфоблок
                     "ELEMENT_ID" => $arResult["ID"],    // ID элемента
                     "MAX_VOTE" => "5",    // Максимальный балл
                     "VOTE_NAMES" => array(    // Подписи к баллам
